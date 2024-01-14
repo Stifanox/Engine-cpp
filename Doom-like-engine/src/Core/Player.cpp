@@ -1,11 +1,11 @@
 #include "Player.h"
 #include <iostream>
 #include <gtc/matrix_transform.hpp>
-#include "../Exceptions/DefaultConstructorCall.h"
+#include "../Exceptions/DefaultOpenGLCall.h"
 
 Player::Player()
 {
-	throw DefaultConstructorCall();
+	throw DefaultOpenGLCall("Player instance was called with default contructor");
 }
 
 Player::Player(glm::vec3 cameraPos, glm::vec3 cameraFront, glm::vec3 cameraUp) : cameraSpeed(10.0f)

@@ -4,7 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "../Exceptions/DefaultConstructorCall.h"
+#include "../Exceptions/DefaultOpenGLCall.h"
 
 unsigned int Shader::createShader(const std::string& shader, int shaderType) {
 	unsigned int shaderId = glCreateShader(shaderType);
@@ -31,7 +31,7 @@ unsigned int Shader::createShader(const std::string& shader, int shaderType) {
 
 Shader::Shader()
 {
-	//throw DefaultConstructorCall();
+	throw DefaultOpenGLCall("Shader was called with default constructor");
 }
 
 Shader::Shader(const std::string& vertexShader, const std::string& fragmentShader)

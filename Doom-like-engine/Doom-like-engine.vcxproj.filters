@@ -79,7 +79,10 @@
     <ClInclude Include="src\3DObjects\Pyramid.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="src\Exceptions\DefaultConstructorCall.h">
+    <ClInclude Include="src\Exceptions\DefaultFiguresCall.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Exceptions\DefaultOpenGLCall.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

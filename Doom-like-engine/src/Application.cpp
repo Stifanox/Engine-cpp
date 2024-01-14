@@ -5,7 +5,8 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "Exceptions/DefaultConstructorCall.h"
+#include "Exceptions/DefaultOpenGLCall.h"
+#include "Exceptions/DefaultFiguresCall.h"
 #include <crtdbg.h>
 #include <memory>
 #include <exception>
@@ -29,7 +30,7 @@
 
 
 float viewportWidth = 800;
-float viewportHeight = 600;
+float viewportHeight = 800;
 
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 6.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -66,7 +67,7 @@ void mouseCallback(GLFWwindow* window, double xpos, double ypos) {
     lastX = xpos;
     lastY = ypos;
 
-    float sensitivity = .5f;
+    float sensitivity = .3f;
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
@@ -131,7 +132,11 @@ int main(void)
                     break;
                 }
             }
-            catch (DefaultConstructorCall& ex) {
+            catch (DefaultFigureCall& ex) {
+                std::cout << ex.what();
+                exit(1);
+            }
+            catch (DefaultOpenGLCall& ex) {
                 std::cout << ex.what();
                 exit(1);
             }

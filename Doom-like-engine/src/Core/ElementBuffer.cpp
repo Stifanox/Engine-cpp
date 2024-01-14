@@ -1,12 +1,12 @@
 #include "ElementBuffer.h"
 #include "GL/glew.h"
 #include <iostream>
-#include "../Exceptions/DefaultConstructorCall.h"
+#include "../Exceptions/DefaultOpenGLCall.h"
 
 ElementBuffer::ElementBuffer()
 {
 	
-	//throw DefaultConstructorCall();
+	throw DefaultOpenGLCall("Element buffer was called with default constructor");
 }
 
 ElementBuffer::ElementBuffer(std::vector<unsigned int> indices): indices(indices)

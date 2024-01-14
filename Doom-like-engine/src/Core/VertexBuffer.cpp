@@ -1,10 +1,10 @@
 #include "VertexBuffer.h"
 #include <iostream>
-#include "../Exceptions/DefaultConstructorCall.h"
+#include "../Exceptions/DefaultOpenGLCall.h"
 
 VertexBuffer::VertexBuffer(): vertexData({})
 {
-	//throw DefaultConstructorCall();
+	throw DefaultOpenGLCall("Vertex buffer was called with default constructor");
 }
 
 VertexBuffer::VertexBuffer(std::vector<float>& vertexData): vertexData(vertexData)

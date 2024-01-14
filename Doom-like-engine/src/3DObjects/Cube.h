@@ -8,11 +8,6 @@ class Cube : public Figure
 public:
 	Cube();
 	Cube(float x, float y, float z, float length);
-	~Cube();
-
-
-	void draw() override;
-	void update(glm::mat4& cameraMatrix) override;
 private:
 
 };

@@ -1,12 +1,12 @@
 #include "Pyramid.h"
 #include <iostream>
 #include "gtc/matrix_transform.hpp"
-#include "../Exceptions/DefaultConstructorCall.h"
+#include "../Exceptions/DefaultFiguresCall.h"
 
 //TODO: move all the buisness logic to figure class
 Pyramid::Pyramid()
 {
-	throw DefaultConstructorCall();
+	throw DefaultFigureCall("Pyramid was called with default constructor");
 }
 
 Pyramid::Pyramid(float x, float y, float z, float baseSide, float height)
@@ -53,31 +53,5 @@ Pyramid::Pyramid(float x, float y, float z, float baseSide, float height)
 	this->shader->setUniform("model", modelPosition);
 	this->shader->setUniform("projection", perspective);
 
-	this->shader->unbind();
-}
-
-Pyramid::~Pyramid()
-{
-	delete this->shader;
-	delete this->ebo;
-	delete this->vao;
-	delete this->vbo;
-}
-
-void Pyramid::draw()
-{
-	this->vao->bind();
-	this->ebo->bind();
-	this->shader->bind();
-	glDrawElements(GL_TRIANGLES, this->ebo->getIndicesSize(), GL_UNSIGNED_INT, nullptr);
-	this->vao->unbind();
-	this->ebo->unbind();
-	this->shader->unbind();
-}
-
-void Pyramid::update(glm::mat4& cameraMatrix)
-{
-	this->shader->bind();
-	this->shader->setUniform("view", cameraMatrix);
 	this->shader->unbind();
 }

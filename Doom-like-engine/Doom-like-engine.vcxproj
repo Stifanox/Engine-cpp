@@ -159,7 +159,8 @@
     <ClInclude Include="src\Core\Shader.h" />
     <ClInclude Include="src\Core\VertexArray.h" />
     <ClInclude Include="src\Core\VertexBuffer.h" />
-    <ClInclude Include="src\Exceptions\DefaultConstructorCall.h" />
+    <ClInclude Include="src\Exceptions\DefaultFiguresCall.h" />
+    <ClInclude Include="src\Exceptions\DefaultOpenGLCall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
